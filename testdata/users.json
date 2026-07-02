@@ -1,0 +1,31 @@
+{
+    "valid_users": [
+        {
+            "username": "standard_user",
+            "password": "secret_sauce",
+            "description": "Usuario estándar con acceso normal"
+        },
+        {
+            "username": "problem_user",
+            "password": "secret_sauce",
+            "description": "Usuario con problemas en imágenes"
+        },
+        {
+            "username": "performance_glitch_user",
+            "password": "secret_sauce",
+            "description": "Usuario con rendimiento lento"
+        }
+    ],
+    "invalid_users": [
+        {
+            "username": "locked_out_user",
+            "password": "secret_sauce",
+            "expected_error": "Sorry, this user has been locked out."
+        },
+        {
+            "username": "wrong_user",
+            "password": "wrong_password",
+            "expected_error": "Username and password do not match"
+        }
+    ]
+}
