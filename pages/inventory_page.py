@@ -1,11 +1,9 @@
 from selenium.webdriver.common.by import By
-from utilities.logger import Logger
 
 
 class InventoryPage:
     def __init__(self, driver):
         self.driver = driver
-        self.logger = Logger()
 
         self.page_title = (By.CLASS_NAME, "title")
         self.inventory_items = (By.CLASS_NAME, "inventory_item")
@@ -34,7 +32,6 @@ class InventoryPage:
     def add_item_to_cart(self, item_index):
         buttons = self.driver.find_elements(*self.add_to_cart_buttons)
         buttons[item_index].click()
-        self.logger.info(f"Item {item_index} agregado al carrito")
 
     def get_cart_count(self):
         try:
@@ -45,9 +42,7 @@ class InventoryPage:
 
     def click_cart(self):
         self.driver.find_element(*self.shopping_cart_link).click()
-        self.logger.info("Carrito clickeado")
 
     def logout(self):
         self.driver.find_element(*self.burger_menu).click()
         self.driver.find_element(*self.logout_link).click()
-        self.logger.info("Logout realizado")

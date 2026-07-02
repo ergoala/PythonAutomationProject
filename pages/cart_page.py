@@ -1,11 +1,9 @@
 from selenium.webdriver.common.by import By
-from utilities.logger import Logger
 
 
 class CartPage:
     def __init__(self, driver):
         self.driver = driver
-        self.logger = Logger()
 
         self.page_title = (By.CLASS_NAME, "title")
         self.cart_items = (By.CLASS_NAME, "cart_item")
@@ -35,12 +33,9 @@ class CartPage:
     def remove_item(self, item_index):
         buttons = self.driver.find_elements(*self.remove_buttons)
         buttons[item_index].click()
-        self.logger.info(f"Item {item_index} eliminado del carrito")
 
     def click_checkout(self):
         self.driver.find_element(*self.checkout_button).click()
-        self.logger.info("Botón checkout clickeado")
 
     def click_continue_shopping(self):
         self.driver.find_element(*self.continue_shopping_button).click()
-        self.logger.info("Botón continue shopping clickeado")

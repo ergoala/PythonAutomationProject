@@ -12,15 +12,6 @@ from config.config import BASE_URL, USERNAME_STANDARD, PASSWORD
 def test_e2e_happy_path():
     pass
 
-@scenario("E2E.feature", "Purchase flow with item removal")
-def test_e2e_with_removal():
-    pass
-
-@scenario("E2E.feature", "Purchase flow - verify product names in cart")
-def test_e2e_verify_product_names():
-    pass
-
-
 # --- Steps ---
 @given("the user is on the login page")
 def go_to_login(driver):

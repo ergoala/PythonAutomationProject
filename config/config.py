@@ -9,7 +9,6 @@ PAGE_LOAD_TIMEOUT = 20
 
 # Credenciales de prueba
 USERNAME_STANDARD = "standard_user"
-USERNAME_LOCKED_OUT = "locked_out_user"
 PASSWORD = "secret_sauce"
 
 # Rutas de carpetas

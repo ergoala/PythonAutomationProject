@@ -1,11 +1,9 @@
 from selenium.webdriver.common.by import By
-from utilities.logger import Logger
 
 
 class CheckoutPage:
     def __init__(self, driver):
         self.driver = driver
-        self.logger = Logger()
 
         # Paso 1: Información del cliente
         self.first_name_input = (By.ID, "first-name")
@@ -27,15 +25,12 @@ class CheckoutPage:
 
     def enter_first_name(self, first_name):
         self.driver.find_element(*self.first_name_input).send_keys(first_name)
-        self.logger.info(f"Nombre ingresado: {first_name}")
 
     def enter_last_name(self, last_name):
         self.driver.find_element(*self.last_name_input).send_keys(last_name)
-        self.logger.info(f"Apellido ingresado: {last_name}")
 
     def enter_postal_code(self, postal_code):
         self.driver.find_element(*self.postal_code_input).send_keys(postal_code)
-        self.logger.info(f"Código postal ingresado: {postal_code}")
 
     def fill_checkout_info(self, first_name, last_name, postal_code):
         self.enter_first_name(first_name)
@@ -45,7 +40,6 @@ class CheckoutPage:
 
     def click_continue(self):
         self.driver.find_element(*self.continue_button).click()
-        self.logger.info("Botón continue clickeado")
 
     def get_subtotal(self):
         text = self.driver.find_element(*self.subtotal_label).text
@@ -61,11 +55,9 @@ class CheckoutPage:
 
     def click_finish(self):
         self.driver.find_element(*self.finish_button).click()
-        self.logger.info("Botón finish clickeado")
 
     def get_complete_message(self):
         return self.driver.find_element(*self.complete_header).text
 
     def click_back_home(self):
         self.driver.find_element(*self.back_home_button).click()
-        self.logger.info("Botón back home clickeado")
