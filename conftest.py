@@ -9,7 +9,10 @@ def driver(request):
 
     yield driver
 
-    driver_manager.quit_driver()
+    try:
+        driver_manager.quit_driver()
+    except Exception:
+        pass
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
